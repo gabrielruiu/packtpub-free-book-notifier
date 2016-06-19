@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)
  */
 @Component
-public class PacktpubCheckerScheduler implements ApplicationListener<ApplicationReadyEvent> {
+public class PacktpubCheckerJobScheduler implements ApplicationListener<ApplicationReadyEvent> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(PacktpubCheckerScheduler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PacktpubCheckerJobScheduler.class);
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
