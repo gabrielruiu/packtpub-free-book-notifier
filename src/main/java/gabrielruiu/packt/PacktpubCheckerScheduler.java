@@ -21,10 +21,11 @@ public class PacktpubCheckerScheduler implements ApplicationListener<Application
     public void onApplicationEvent(ApplicationReadyEvent event) {
         ConfigurableApplicationContext context = event.getApplicationContext();
         ConfigurableEnvironment env = context.getEnvironment();
-        PacktpubCheckerJob poller = context.getBean(PacktpubCheckerJob.class);
+        PacktpubCheckerJob packtpubCheckerJob = context.getBean(PacktpubCheckerJob.class);
 
         Integer duration = env.getRequiredProperty("scheduler.time.duration", Integer.class);
         TimeUnit timeUnit = env.getRequiredProperty("scheduler.time.unit", TimeUnit.class);
-        poller.start(duration, timeUnit);
+
+        packtpubCheckerJob.start(duration, timeUnit);
     }
 }
