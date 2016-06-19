@@ -9,7 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(Main.class, args);
+        sleepIndefinitely();
+    }
+
+    private static void sleepIndefinitely() throws InterruptedException {
+        while (true) {
+            Thread.sleep(Long.MAX_VALUE);
+        }
     }
 }

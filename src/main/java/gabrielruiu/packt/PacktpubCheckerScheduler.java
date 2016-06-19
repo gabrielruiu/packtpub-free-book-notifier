@@ -1,5 +1,7 @@
 package gabrielruiu.packt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,15 +19,19 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class PacktpubCheckerScheduler implements ApplicationListener<ApplicationReadyEvent> {
 
+    private static final Logger LOG = LoggerFactory.getLogger(PacktpubCheckerScheduler.class);
+
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         ConfigurableApplicationContext context = event.getApplicationContext();
         ConfigurableEnvironment env = context.getEnvironment();
         PacktpubCheckerJob packtpubCheckerJob = context.getBean(PacktpubCheckerJob.class);
 
-        Integer duration = env.getRequiredProperty("scheduler.time.duration", Integer.class);
+        Integer interval = env.getRequiredProperty("scheduler.time.interval", Integer.class);
         TimeUnit timeUnit = env.getRequiredProperty("scheduler.time.unit", TimeUnit.class);
 
-        packtpubCheckerJob.start(duration, timeUnit);
+        LOG.info(String.format("Starting %s with following settings: interval=[%d], unit=[%s]", PacktpubCheckerJob.class.getSimpleName(), interval, timeUnit));
+
+        packtpubCheckerJob.start(interval, timeUnit);
     }
 }

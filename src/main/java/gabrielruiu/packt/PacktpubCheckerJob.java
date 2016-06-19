@@ -19,8 +19,12 @@ public class PacktpubCheckerJob {
         this.packtpubChecker = packtpubChecker;
     }
 
-    public void start(Integer duration, TimeUnit timeUnit) {
-        Observable.interval(duration, timeUnit)
-                  .doOnNext(interval -> packtpubChecker.checkPacktPub());
+    /**
+     * Runs {@link PacktpubChecker#checkPacktPub()} each time the interval Observable emits a new item
+     */
+    public void start(Integer interval, TimeUnit timeUnit) {
+        Observable.interval(interval, timeUnit)
+                  .doOnNext(counter -> packtpubChecker.checkPacktPub())
+                  .subscribe();
     }
 }

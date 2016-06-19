@@ -1,5 +1,7 @@
 package gabrielruiu.packt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class PacktpubChecker {
 
-    public void checkPacktPub() {
+    private static final Logger LOG = LoggerFactory.getLogger(PacktpubChecker.class);
 
+    public void checkPacktPub() {
+        LOG.info("Retrieving title and description of free ebook on PacktPub");
     }
 }
