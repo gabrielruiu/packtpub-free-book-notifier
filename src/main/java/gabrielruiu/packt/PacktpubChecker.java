@@ -31,7 +31,9 @@ public class PacktpubChecker {
             String bookDescription = bookSummaryElement.children().get(3).text();
             String bookImageSrc = prependHttpProtocol(bookImageElement.attr("src"));
 
-            LOG.info("Retrieved title=[{}], description=[{}], image=[{}]", bookTitle, bookDescription, bookImageSrc);
+            BookSummary bookSummary = new BookSummary(bookTitle, bookDescription, bookImageSrc, PACKTPUB_URL);
+
+            LOG.info("Retrieved following book summary=[{}]", bookSummary);
         } catch (IOException e) {
             e.printStackTrace();
         }
