@@ -20,11 +20,11 @@ public class PacktpubCheckerJob {
     }
 
     /**
-     * Runs {@link PacktpubChecker#checkPacktPub()} each time the interval Observable emits a new item
+     * Runs {@link PacktpubChecker#checkPacktpub()} each time the interval Observable emits a new item
      */
     public void start(Integer interval, TimeUnit timeUnit) {
         Observable.interval(interval, timeUnit)
-                  .doOnNext(counter -> packtpubChecker.checkPacktPub())
+                  .doOnNext(counter -> packtpubChecker.checkPacktpub())
                   .subscribe();
     }
 }
