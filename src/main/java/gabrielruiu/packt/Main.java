@@ -2,11 +2,13 @@ package gabrielruiu.packt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)
  */
 @SpringBootApplication
+@EnableConfigurationProperties(EmailProperties.class)
 public class Main {
 
     public static void main(String[] args) throws Exception {
