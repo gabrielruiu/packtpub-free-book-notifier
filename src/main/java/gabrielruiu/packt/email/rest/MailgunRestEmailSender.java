@@ -46,7 +46,7 @@ public class MailgunRestEmailSender implements EmailSender {
         form.add("from", emailProperties.getFrom());
         form.add("to", emailProperties.getRecipient());
         form.add("subject", emailProperties.getSubject());
-        form.add("html", emailTemplateProvider.generateEmailBody(bookSummary));
+        form.add("html", emailTemplateProvider.generateEmailBody("", bookSummary));
         form.add("o:tag", "packtpub-notifier");
         form.add("o:dkim", "yes");
 

@@ -15,8 +15,8 @@ public class EmailTemplateProvider {
     @Autowired
     private Mustache.Compiler mustacheCompiler;
 
-    public String generateEmailBody(BookSummary bookSummary) {
-        Template template = mustacheCompiler.compile("email");
+    public String generateEmailBody(String emailTemplate, BookSummary bookSummary) {
+        Template template = mustacheCompiler.compile(emailTemplate);
         return template.execute(bookSummary);
     }
 }

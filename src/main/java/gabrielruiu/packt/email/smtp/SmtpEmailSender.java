@@ -37,7 +37,7 @@ public class SmtpEmailSender implements EmailSender {
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(emailProperties.getRecipient());
         mail.setSubject(emailProperties.getSubject());
-        mail.setText(emailTemplateProvider.generateEmailBody(bookSummary));
+        mail.setText(emailTemplateProvider.generateEmailBody("", bookSummary));
         return mail;
     }
 }
