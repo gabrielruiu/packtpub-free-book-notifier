@@ -1,5 +1,9 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.email.smtp;
 
+import gabrielruiu.packt.email.EmailSender;
+import gabrielruiu.packt.email.EmailTemplateProvider;
+import gabrielruiu.packt.model.BookSummary;
+import gabrielruiu.packt.properties.EmailProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;

@@ -1,4 +1,4 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.model;
 
 /**
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)

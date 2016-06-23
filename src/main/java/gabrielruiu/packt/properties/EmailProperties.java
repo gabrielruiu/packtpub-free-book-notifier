@@ -1,4 +1,4 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

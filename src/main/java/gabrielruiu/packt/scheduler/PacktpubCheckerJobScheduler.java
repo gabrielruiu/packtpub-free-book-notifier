@@ -1,4 +1,4 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.scheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

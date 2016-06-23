@@ -1,5 +1,6 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.scheduler;
 
+import gabrielruiu.packt.model.BookSummary;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

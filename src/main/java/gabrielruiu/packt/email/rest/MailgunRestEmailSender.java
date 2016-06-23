@@ -1,10 +1,15 @@
-package gabrielruiu.packt;
+package gabrielruiu.packt.email.rest;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
+import gabrielruiu.packt.email.EmailSender;
+import gabrielruiu.packt.email.EmailTemplateProvider;
+import gabrielruiu.packt.model.BookSummary;
+import gabrielruiu.packt.properties.EmailProperties;
+import gabrielruiu.packt.properties.MailgunProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
