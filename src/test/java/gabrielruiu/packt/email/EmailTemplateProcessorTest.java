@@ -16,14 +16,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Main.class)
-public class EmailTemplateProviderTest {
+public class EmailTemplateProcessorTest {
 
     @Autowired
-    EmailTemplateProvider emailTemplateProvider;
+    EmailTemplateProcessor emailTemplateProcessor;
 
     @Test
     public void shouldCreateTheExpectedEmailBody() {
-        String emailBody = emailTemplateProvider.generateEmailBody(emailTemplate(), getBookSummary());
+        String emailBody = emailTemplateProcessor.generateEmailBody(emailTemplate(), getBookSummary());
 
         assertThat(emailBody, is(expectedEmailBody()));
     }

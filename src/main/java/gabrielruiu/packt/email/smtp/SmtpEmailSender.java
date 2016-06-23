@@ -1,7 +1,7 @@
 package gabrielruiu.packt.email.smtp;
 
+import gabrielruiu.packt.email.EmailBodyProvider;
 import gabrielruiu.packt.email.EmailSender;
-import gabrielruiu.packt.email.EmailTemplateProvider;
 import gabrielruiu.packt.model.BookSummary;
 import gabrielruiu.packt.properties.EmailProperties;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class SmtpEmailSender implements EmailSender {
     private JavaMailSender javaMailSender;
 
     @Autowired
-    private EmailTemplateProvider emailTemplateProvider;
+    private EmailBodyProvider emailBodyProvider;
 
     @Autowired
     private EmailProperties emailProperties;
@@ -37,7 +37,7 @@ public class SmtpEmailSender implements EmailSender {
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(emailProperties.getRecipient());
         mail.setSubject(emailProperties.getSubject());
-        mail.setText(emailTemplateProvider.generateEmailBody("", bookSummary));
+        mail.setText(emailBodyProvider.buildEmailBody(bookSummary));
         return mail;
     }
 }

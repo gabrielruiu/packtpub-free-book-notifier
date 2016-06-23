@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)
  */
 @Component
-public class EmailTemplateProvider {
+public class EmailTemplateProcessor {
 
     @Autowired
     private Mustache.Compiler mustacheCompiler;

@@ -5,8 +5,8 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
+import gabrielruiu.packt.email.EmailBodyProvider;
 import gabrielruiu.packt.email.EmailSender;
-import gabrielruiu.packt.email.EmailTemplateProvider;
 import gabrielruiu.packt.model.BookSummary;
 import gabrielruiu.packt.properties.EmailProperties;
 import gabrielruiu.packt.properties.MailgunProperties;
@@ -33,7 +33,7 @@ public class MailgunRestEmailSender implements EmailSender {
     private MailgunProperties mailgunProperties;
 
     @Autowired
-    private EmailTemplateProvider emailTemplateProvider;
+    private EmailBodyProvider emailBodyProvider;
 
     @Override
     public void sendEmailWithBookSummary(BookSummary bookSummary) {
@@ -46,7 +46,7 @@ public class MailgunRestEmailSender implements EmailSender {
         form.add("from", emailProperties.getFrom());
         form.add("to", emailProperties.getRecipient());
         form.add("subject", emailProperties.getSubject());
-        form.add("html", emailTemplateProvider.generateEmailBody("", bookSummary));
+        form.add("html", emailBodyProvider.buildEmailBody(bookSummary));
         form.add("o:tag", "packtpub-notifier");
         form.add("o:dkim", "yes");
 
