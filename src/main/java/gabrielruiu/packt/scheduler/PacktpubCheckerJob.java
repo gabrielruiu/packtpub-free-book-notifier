@@ -12,12 +12,8 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class PacktpubCheckerJob {
 
-    private PacktpubChecker packtpubChecker;
-
     @Autowired
-    public PacktpubCheckerJob(PacktpubChecker packtpubChecker) {
-        this.packtpubChecker = packtpubChecker;
-    }
+    private PacktpubChecker packtpubChecker;
 
     /**
      * Runs {@link PacktpubChecker#checkPacktpub()} each time the interval Observable emits a new item
