@@ -26,7 +26,7 @@ public class EmailBodyProvider {
     }
 
     private String getEmailTemplate() {
-        Resource emailTemplateFile = resourceLoader.getResource("classpath:resources/email.html");
+        Resource emailTemplateFile = resourceLoader.getResource("classpath:templates/email.html");
         try {
             return IOUtils.toString(emailTemplateFile.getURI(), "UTF8");
         } catch (IOException e) {
