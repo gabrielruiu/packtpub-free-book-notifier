@@ -1,11 +1,13 @@
 package gabrielruiu.packt.scheduler;
 
+import gabrielruiu.packt.email.EmailSender;
 import gabrielruiu.packt.model.BookSummary;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -17,8 +19,10 @@ import java.io.IOException;
 public class PacktpubChecker {
 
     private static final String PACKTPUB_URL = "https://www.packtpub.com/packt/offers/free-learning";
-
     private static final Logger LOG = LoggerFactory.getLogger(PacktpubChecker.class);
+
+    @Autowired
+    private EmailSender emailSender;
 
     public void checkPacktpub() {
         try {
@@ -35,6 +39,7 @@ public class PacktpubChecker {
             BookSummary bookSummary = new BookSummary(bookTitle, bookDescription, bookImageSrc, PACKTPUB_URL);
 
             LOG.info("Retrieved following book summary=[{}]", bookSummary);
+            emailSender.sendEmailWithBookSummary(bookSummary);
         } catch (IOException e) {
             e.printStackTrace();
         }
