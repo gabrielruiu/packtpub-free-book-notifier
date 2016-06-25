@@ -1,11 +1,12 @@
 package gabrielruiu.packt.scheduler;
 
+import gabrielruiu.packt.properties.SchedulerProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -21,14 +22,16 @@ public class PacktpubCheckerJobScheduler implements ApplicationListener<Applicat
 
     private static final Logger LOG = LoggerFactory.getLogger(PacktpubCheckerJobScheduler.class);
 
+    @Autowired
+    private SchedulerProperties schedulerProperties;
+
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         ConfigurableApplicationContext context = event.getApplicationContext();
-        ConfigurableEnvironment env = context.getEnvironment();
         PacktpubCheckerJob packtpubCheckerJob = context.getBean(PacktpubCheckerJob.class);
 
-        Integer interval = env.getRequiredProperty("scheduler.time.interval", Integer.class);
-        TimeUnit timeUnit = env.getRequiredProperty("scheduler.time.unit", TimeUnit.class);
+        Integer interval = schedulerProperties.getInterval();
+        TimeUnit timeUnit = schedulerProperties.getUnit();
 
         LOG.info(String.format("Starting %s with following settings: interval=[%d], unit=[%s]", PacktpubCheckerJob.class.getSimpleName(), interval, timeUnit));
 

@@ -2,6 +2,7 @@ package gabrielruiu.packt;
 
 import gabrielruiu.packt.properties.EmailProperties;
 import gabrielruiu.packt.properties.MailgunProperties;
+import gabrielruiu.packt.properties.SchedulerProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -10,7 +11,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)
  */
 @SpringBootApplication
-@EnableConfigurationProperties(value = {EmailProperties.class, MailgunProperties.class})
+@EnableConfigurationProperties(value = {EmailProperties.class, MailgunProperties.class, SchedulerProperties.class})
 public class Main {
 
     public static void main(String[] args) throws Exception {
