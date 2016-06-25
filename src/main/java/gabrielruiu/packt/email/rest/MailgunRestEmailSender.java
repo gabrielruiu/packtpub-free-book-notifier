@@ -54,7 +54,7 @@ public class MailgunRestEmailSender implements EmailSender {
         MultivaluedMapImpl form = new MultivaluedMapImpl();
         form.add("from", emailProperties.getFrom());
         form.add("to", emailProperties.getRecipient());
-        form.add("subject", emailSubjectResolver.determineEmailSubject());
+        form.add("subject", emailSubjectResolver.determineEmailSubject(bookSummary.getTitle()));
         form.add("html", emailBodyProvider.buildEmailBody(bookSummary));
         form.add("o:tag", "packtpub-notifier");
         form.add("o:dkim", "yes");

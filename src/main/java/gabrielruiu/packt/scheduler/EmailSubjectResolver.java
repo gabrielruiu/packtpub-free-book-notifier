@@ -11,8 +11,8 @@ import java.util.Date;
 @Component
 public class EmailSubjectResolver {
 
-    public String determineEmailSubject() {
-        return "PacktPub Free ebook [" + getCurrentDate() + "]";
+    public String determineEmailSubject(String bookTitle) {
+        return bookTitle + " [" + getCurrentDate() + "]";
     }
 
     private String getCurrentDate() {
