@@ -1,5 +1,5 @@
 FROM maven:3.3.9-jdk-8
-WORKDIR /tmp
+WORKDIR /app
 
 RUN git clone https://github.com/gabrielruiu/packtpub-free-book-notifier
 RUN mvn -f packtpub-free-book-notifier/pom.xml clean package
