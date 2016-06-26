@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)
  */
-@Profile("mock")
+@Profile("noop")
 @Component
 public class NoopEmailSender implements EmailSender {
 

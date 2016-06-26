@@ -17,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Main.class)
-@IntegrationTest("spring.profiles.active=mock")
+@IntegrationTest("spring.profiles.active=noop")
 public class EmailTemplateProcessorTest {
 
     @Autowired
