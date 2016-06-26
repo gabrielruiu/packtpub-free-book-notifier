@@ -9,7 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class EmailProperties {
 
     private String recipient;
-    private String subject;
     private String from;
 
     public String getRecipient() {
@@ -18,14 +17,6 @@ public class EmailProperties {
 
     public void setRecipient(String recipient) {
         this.recipient = recipient;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getFrom() {
