@@ -12,7 +12,6 @@ public class SchedulerProperties {
 
     private Integer interval;
     private TimeUnit unit;
-    private String start;
 
     public Integer getInterval() {
         return interval;
@@ -28,13 +27,5 @@ public class SchedulerProperties {
 
     public void setUnit(TimeUnit unit) {
         this.unit = unit;
-    }
-
-    public String getStart() {
-        return start;
-    }
-
-    public void setStart(String start) {
-        this.start = start;
     }
 }
