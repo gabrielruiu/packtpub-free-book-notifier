@@ -1,6 +1,6 @@
 package gabrielruiu.packt.exception;
 
-import gabrielruiu.packt.model.BookSummary;
+import gabrielruiu.packt.BookSummary;
 
 /**
  * @author Gabriel Mihai Ruiu (gabriel.ruiu@mail.com)

@@ -1,7 +1,7 @@
 package gabrielruiu.packt.email;
 
+import gabrielruiu.packt.BookSummary;
 import gabrielruiu.packt.Main;
-import gabrielruiu.packt.model.BookSummary;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

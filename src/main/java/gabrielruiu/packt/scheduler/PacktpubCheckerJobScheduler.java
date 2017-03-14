@@ -1,6 +1,6 @@
 package gabrielruiu.packt.scheduler;
 
-import gabrielruiu.packt.properties.SchedulerProperties;
+import gabrielruiu.packt.SchedulerProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package gabrielruiu.packt.email;
 
-import gabrielruiu.packt.model.BookSummary;
+import gabrielruiu.packt.BookSummary;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

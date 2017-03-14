@@ -1,4 +1,4 @@
-package gabrielruiu.packt.model
+package gabrielruiu.packt
 
 class BookSummary(
         val title: String,

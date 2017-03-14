@@ -1,6 +1,6 @@
 package gabrielruiu.packt.email;
 
-import gabrielruiu.packt.model.BookSummary;
+import gabrielruiu.packt.BookSummary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 

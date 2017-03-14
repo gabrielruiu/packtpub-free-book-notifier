@@ -1,10 +1,10 @@
 package gabrielruiu.packt.email.smtp;
 
+import gabrielruiu.packt.BookSummary;
+import gabrielruiu.packt.EmailProperties;
 import gabrielruiu.packt.email.EmailBodyProvider;
 import gabrielruiu.packt.email.EmailSender;
 import gabrielruiu.packt.exception.EmailPreparationException;
-import gabrielruiu.packt.model.BookSummary;
-import gabrielruiu.packt.properties.EmailProperties;
 import gabrielruiu.packt.scheduler.EmailSubjectResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
