@@ -1,6 +1,6 @@
 package gabrielruiu.packt
 
-class BookSummary(
+data class BookSummary(
         val title: String,
         val description: String,
         val imageSrc: String,
