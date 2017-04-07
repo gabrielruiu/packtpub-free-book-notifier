@@ -5,19 +5,19 @@ import java.util.concurrent.TimeUnit
 
 @ConfigurationProperties(prefix = "mail")
 class EmailProperties {
-    var recipient: String? = null
-    var from: String? = null
+    lateinit var recipient: String
+    lateinit var from: String
 }
 
 @ConfigurationProperties(prefix = "mailgun")
 class MailgunProperties {
-    var key: String? = null
-    var url: String? = null
-    var domain: String? = null
+    lateinit var key: String
+    lateinit var url: String
+    lateinit var domain: String
 }
 
 @ConfigurationProperties(prefix = "scheduler.time")
 class SchedulerProperties{
     var interval: Int? = null
-    var unit: TimeUnit? = null
+    lateinit var unit: TimeUnit
 }
