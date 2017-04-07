@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType
 @Profile("mailgun")
 @Primary
 @Component
-class MailgunRestEmailSender(
+open class MailgunRestEmailSender(
         val emailProperties: EmailProperties,
         val mailgunProperties: MailgunProperties,
         val emailBodyProvider: EmailBodyProvider,

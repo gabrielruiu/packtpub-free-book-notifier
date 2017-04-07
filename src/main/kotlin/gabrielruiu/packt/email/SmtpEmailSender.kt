@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage
 
 @Profile("smtp")
 @Component
-class SmtpEmailSender(
+open class SmtpEmailSender(
     val javaMailSender: JavaMailSender,
     val emailBodyProvider: EmailBodyProvider,
     val emailSubjectResolver: EmailSubjectResolver,
